@@ -6,170 +6,236 @@
   <title>Praktisk værksted</title>
   <style>
     :root{
-      --bg:#f3f7f4;
+      --dark:#313d54;
+      --dark-2:#3a4862;
+      --turquoise:#11b7b5;
+      --turquoise-soft:#dff7f6;
+      --page:#f4f8fb;
       --card:#ffffff;
-      --text:#23312b;
-      --muted:#5d6c66;
-      --primary:#4b7f68;
-      --secondary:#e3efe8;
-      --border:#d8e5dd;
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --radius:22px;
+      --text:#243043;
+      --muted:#5f6e82;
+      --border:#d9e4ec;
+      --shadow:0 12px 30px rgba(25, 40, 60, 0.10);
+      --radius-xl:26px;
+      --radius-lg:22px;
+      --radius-md:16px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg,#edf5f0 0%, var(--bg) 100%);
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg, #eef4f8 0%, var(--page) 100%);
       color:var(--text);
       line-height:1.65;
     }
-    .container{
-      max-width:900px;
+
+    .wrap{
+      max-width:980px;
       margin:0 auto;
-      padding:28px 18px 40px;
+      padding:28px 18px 42px;
     }
+
+    .hero{
+      background:linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+      color:#fff;
+      border-radius:var(--radius-xl);
+      padding:26px 24px;
+      box-shadow:var(--shadow);
+      margin-bottom:24px;
+    }
+
+    .hero-top{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:10px;
+    }
+
+    .hero-logo{
+      width:68px;
+      height:68px;
+      object-fit:contain;
+      display:block;
+      flex-shrink:0;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:2rem;
+      line-height:1.1;
+    }
+
+    .hero p{
+      margin:10px 0 0;
+      color:rgba(255,255,255,0.92);
+      font-size:1.02rem;
+    }
+
     .card{
       background:var(--card);
       border:1px solid var(--border);
-      border-radius:var(--radius);
+      border-radius:var(--radius-lg);
       box-shadow:var(--shadow);
+      padding:24px;
+      margin-bottom:18px;
+      position:relative;
       overflow:hidden;
     }
-    .hero{
-      background:linear-gradient(135deg, var(--primary), #78a892);
-      color:white;
-      padding:30px 24px;
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:6px;
+      background:var(--turquoise);
     }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:2rem;
-    }
-    .hero p{
-      margin:0;
-      font-size:1.05rem;
-      opacity:0.95;
-    }
-    .content{
-      padding:26px 24px 30px;
-    }
-    .section{
-      margin-bottom:26px;
-    }
+
     h2{
       margin:0 0 12px;
       font-size:1.2rem;
-      color:var(--primary);
+      color:var(--dark);
     }
+
     p{
       margin:0 0 12px;
     }
+
     ul{
       margin:10px 0 0;
       padding-left:22px;
     }
+
     li{
       margin:7px 0;
     }
+
     .info-box{
-      background:var(--secondary);
-      border-left:5px solid var(--primary);
-      padding:14px 16px;
+      background:var(--turquoise-soft);
+      border-left:5px solid var(--turquoise);
       border-radius:14px;
-      margin-top:12px;
+      padding:14px 16px;
+      margin-top:16px;
     }
+
+    .back{
+      display:inline-block;
+      margin-bottom:18px;
+      color:var(--dark);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .back:hover{
+      text-decoration:underline;
+    }
+
     .footer{
-      margin-top:30px;
-      padding-top:18px;
-      border-top:1px solid var(--border);
+      text-align:center;
       color:var(--muted);
       font-size:0.95rem;
+      margin-top:26px;
     }
-    @media (max-width:600px){
-      .hero h1{font-size:1.7rem}
-      .content,.hero{padding:20px}
+
+    @media (max-width:700px){
+      .hero-logo{
+        width:56px;
+        height:56px;
+      }
+
+      .hero h1{
+        font-size:1.7rem;
+      }
+
+      .hero, .card{
+        padding:20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← Tilbage til fagoversigt</a>
+
+    <section class="hero">
+      <div class="hero-top">
+        <img src="specialminds-logo.png" alt="Special Minds logo" class="hero-logo" />
         <h1>Praktisk værksted</h1>
-        <p>Praktiske færdigheder, værktøjskendskab og opgaver fra hverdagen.</p>
       </div>
+      <p>Praktiske færdigheder, værktøjskendskab og opgaver fra hverdagen.</p>
+    </section>
 
-      <div class="content">
-        <div class="section">
-          <h2>Beskrivelse</h2>
-          <p>
-            I disse timer løser vi mindre praktiske opgaver, bygger ting eller laver mindre
-            vedligeholdelses- og forskønnelsesopgaver hos Special Minds.
-          </p>
-        </div>
+    <section class="card">
+      <h2>Beskrivelse</h2>
+      <p>
+        Vi vil i disse timer løse mindre praktiske opgaver, bygge ting eller lave mindre
+        vedligeholdelses- eller forskønnelsesopgaver hos Special Minds.
+      </p>
+    </section>
 
-        <div class="section">
-          <h2>Formål</h2>
-          <p>
-            Eleverne træner praktiske evner og færdigheder i forbindelse med livet i egen bolig.
-          </p>
-        </div>
+    <section class="card">
+      <h2>Formål</h2>
+      <p>
+        Eleverne træner praktiske evner og færdigheder i forbindelse med livet i egen bolig.
+      </p>
+    </section>
 
-        <div class="section">
-          <h2>Eksempler på udførte og kommende projekter</h2>
-          <ul>
-            <li>Reparation af pallerammer til plantekasser</li>
-            <li>Mindre træprojekter</li>
-            <li>Afdækning og maling af vægge eller byggede træprojekter</li>
-            <li>Udluftning af radiatorer</li>
-            <li>Ophængning af emner på forskellige vægtyper</li>
-            <li>Spartling af huller i væg</li>
-            <li>Støvsugning og fnugrulning af kontorstole</li>
-            <li>Forskellige flytteopgaver af f.eks. skabe eller borde</li>
-            <li>Reparation af f.eks. skabe, borde og andet forefaldende</li>
-          </ul>
-        </div>
+    <section class="card">
+      <h2>Eksempler på udførte og kommende projekter</h2>
+      <ul>
+        <li>Reparere pallerammer til plantekasser</li>
+        <li>Mindre træprojekter</li>
+        <li>Afdække og male vægge eller byggede træprojekter</li>
+        <li>Udlufte radiatorer</li>
+        <li>Ophængning af emner på forskellige vægtyper</li>
+        <li>Spartling af huller i væg</li>
+        <li>Støvsugning og fnugrulning af kontorstole</li>
+        <li>Forskellige flytteopgaver af f.eks. skabe eller borde</li>
+        <li>Reparation af f.eks. skabe, borde og andet forefaldende</li>
+      </ul>
+    </section>
 
-        <div class="section">
-          <h2>Flere idéer</h2>
-          <ul>
-            <li>Rensning af vandlås under håndvask</li>
-            <li>Skift af pære og forståelse af forskel på E14, E27 osv.</li>
-            <li>Tjek og skift af batterier i røgalarmer</li>
-            <li>Afkalkning af elkedel og brusehoved</li>
-            <li>Rensning af afløb uden kemi, f.eks. med afløbsrenserspiral</li>
-            <li>Brug af rawlplugs og forskel på beton, gips og mursten</li>
-            <li>Samling af IKEA-møbler efter manual</li>
-            <li>Lære at bruge vaterpas korrekt</li>
-            <li>Smøring af hængsler og justering af skabslåger</li>
-            <li>Grundlæggende værktøjskendskab</li>
-          </ul>
+    <section class="card">
+      <h2>Flere idéer</h2>
+      <ul>
+        <li>Rensning af vandlås under håndvask</li>
+        <li>Skift af pære og forstå forskellen på E14, E27 osv.</li>
+        <li>Tjek og skift af batterier i røgalarmer</li>
+        <li>Afkalkning af elkedel og brusehoved</li>
+        <li>Rensning af afløb uden kemi, f.eks. med afløbsrenserspiral</li>
+        <li>Brug af rawlplugs og forskel på beton, gips og mursten</li>
+        <li>Samling af IKEA-møbler efter manual</li>
+        <li>Lære at bruge vaterpas korrekt</li>
+        <li>Smøring af hængsler og justering af skabslåger</li>
+        <li>Grundlæggende værktøjskendskab</li>
+      </ul>
 
-          <div class="info-box">
-            Dette kan eventuelt laves som et lille <strong>“værktøjs-kørekort”</strong>.
-          </div>
-        </div>
-
-        <div class="section">
-          <h2>Kendskab til værktøjer og materialer</h2>
-          <p>Vi vil i forbindelse med dette fag blive fortrolige med:</p>
-          <ul>
-            <li>Målebånd</li>
-            <li>Tommestok</li>
-            <li>Hammer og sav</li>
-            <li>Skruetrækker og unbrakonøgle</li>
-            <li>Skruemaskine og boremaskine, herunder montering af bits og bor</li>
-            <li>Forskellige søm- og skruetyper</li>
-            <li>Forskellige typer af bits</li>
-            <li>Forskellige vægtyper</li>
-            <li>Søm, skruer og forskellige typer bor</li>
-          </ul>
-        </div>
-
-        <div class="footer">
-          Scan QR-koden på plakaten for at læse mere om faget Praktisk værksted.
-        </div>
+      <div class="info-box">
+        Dette kan eventuelt laves som et lille <strong>værktøjs-kørekort</strong>.
       </div>
+    </section>
+
+    <section class="card">
+      <h2>Kendskab til følgende værktøjer</h2>
+      <p>Vi vil i forbindelse med dette fag blive fortrolige med:</p>
+      <ul>
+        <li>Målebånd</li>
+        <li>Tommestok</li>
+        <li>Hammer og sav</li>
+        <li>Skruetrækker og unbrakonøgle</li>
+        <li>Skruemaskine og boremaskine, herunder montering af bits og bor</li>
+        <li>Kende forskel på søm og skruetyper</li>
+        <li>Kende forskel på forskellige typer af bits</li>
+        <li>Kende forskel på vægtyper</li>
+        <li>Søm, skruer og forskellige typer bor</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      Scan QR-koden for at læse mere om Praktisk værksted.
     </div>
   </div>
 </body>
