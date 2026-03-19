@@ -6,137 +6,202 @@
   <title>Historie & samfundsfag</title>
   <style>
     :root{
-      --bg:#f5f4fb;
+      --dark:#313d54;
+      --dark-2:#3a4862;
+      --turquoise:#11b7b5;
+      --turquoise-soft:#dff7f6;
+      --page:#f4f8fb;
       --card:#ffffff;
-      --text:#27263a;
-      --muted:#66657a;
-      --primary:#5c57a5;
-      --secondary:#ebe9fb;
-      --border:#dddaf2;
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --radius:22px;
+      --text:#243043;
+      --muted:#5f6e82;
+      --border:#d9e4ec;
+      --shadow:0 12px 30px rgba(25, 40, 60, 0.10);
+      --radius-xl:26px;
+      --radius-lg:22px;
+      --radius-md:16px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg,#f0effa 0%, var(--bg) 100%);
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg, #eef4f8 0%, var(--page) 100%);
       color:var(--text);
       line-height:1.65;
     }
-    .container{
-      max-width:900px;
+
+    .wrap{
+      max-width:980px;
       margin:0 auto;
-      padding:28px 18px 40px;
+      padding:28px 18px 42px;
     }
+
+    .hero{
+      background:linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+      color:#fff;
+      border-radius:var(--radius-xl);
+      padding:26px 24px;
+      box-shadow:var(--shadow);
+      margin-bottom:24px;
+    }
+
+    .hero-top{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:10px;
+    }
+
+    .hero-logo{
+      width:68px;
+      height:68px;
+      object-fit:contain;
+      display:block;
+      flex-shrink:0;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:2rem;
+      line-height:1.1;
+    }
+
+    .hero p{
+      margin:10px 0 0;
+      color:rgba(255,255,255,0.92);
+      font-size:1.02rem;
+    }
+
     .card{
       background:var(--card);
       border:1px solid var(--border);
-      border-radius:var(--radius);
+      border-radius:var(--radius-lg);
       box-shadow:var(--shadow);
+      padding:24px;
+      margin-bottom:18px;
+      position:relative;
       overflow:hidden;
     }
-    .hero{
-      background:linear-gradient(135deg, var(--primary), #7d77c3);
-      color:white;
-      padding:30px 24px;
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:6px;
+      background:var(--turquoise);
     }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:2rem;
-    }
-    .hero p{
-      margin:0;
-      font-size:1.05rem;
-      opacity:0.95;
-    }
-    .content{
-      padding:26px 24px 30px;
-    }
-    .section{
-      margin-bottom:26px;
-    }
+
     h2{
       margin:0 0 12px;
       font-size:1.2rem;
-      color:var(--primary);
+      color:var(--dark);
     }
+
     p{
       margin:0 0 12px;
     }
+
     ul{
       margin:10px 0 0;
       padding-left:22px;
     }
+
     li{
       margin:7px 0;
     }
+
+    .back{
+      display:inline-block;
+      margin-bottom:18px;
+      color:var(--dark);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .back:hover{
+      text-decoration:underline;
+    }
+
     .footer{
-      margin-top:30px;
-      padding-top:18px;
-      border-top:1px solid var(--border);
+      text-align:center;
       color:var(--muted);
       font-size:0.95rem;
+      margin-top:26px;
     }
-    @media (max-width:600px){
-      .hero h1{font-size:1.7rem}
-      .content,.hero{padding:20px}
+
+    @media (max-width:700px){
+      .hero-logo{
+        width:56px;
+        height:56px;
+      }
+
+      .hero h1{
+        font-size:1.7rem;
+      }
+
+      .hero, .card{
+        padding:20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← Tilbage til fagoversigt</a>
+
+    <section class="hero">
+      <div class="hero-top">
+        <img src="specialminds-logo.png" alt="Special Minds logo" class="hero-logo" />
         <h1>Historie &amp; samfundsfag</h1>
-        <p>Undervisning i fortid, nutid, politik, samfund og kritisk tænkning.</p>
       </div>
+      <p>Undervisning i fortid, nutid, politik, samfund og kritisk tænkning.</p>
+    </section>
 
-      <div class="content">
-        <div class="section">
-          <h2>Beskrivelse</h2>
-          <p>
-            Om torsdagen undervises der skiftevis i historie og samfundsfag.
-          </p>
-          <p>
-            I historie arbejder vi med centrale begivenheder, processer og konflikter gennem tiden
-            – fra revolutioner til nutidige internationale forhold. Der er fokus på kilder,
-            tidslinjer, årsag og virkning samt historisk kontekst.
-          </p>
-          <p>
-            I samfundsfag undersøger vi politik, økonomi, menneskerettigheder, globalisering og
-            internationale konflikter.
-          </p>
-        </div>
+    <section class="card">
+      <h2>Beskrivelse</h2>
+      <p>Om torsdagen undervises der skiftevis i historie og samfundsfag.</p>
+      <p>
+        I historie arbejder vi med centrale begivenheder, processer og konflikter gennem tiden
+        – fra revolutioner til nutidige internationale forhold.
+      </p>
+      <p>
+        Der er fokus på kilder, tidslinjer, årsag-virkning og historisk kontekst.
+      </p>
+      <p>
+        I samfundsfag undersøger vi politik, økonomi, menneskerettigheder, globalisering
+        og internationale konflikter.
+      </p>
+    </section>
 
-        <div class="section">
-          <h2>Formål</h2>
-          <p>
-            Eleverne diskuterer aktuelle emner via videoer, artikler og debat for at styrke
-            kritisk tænkning og kildekritik.
-          </p>
-        </div>
+    <section class="card">
+      <h2>Formål</h2>
+      <p>
+        Eleverne diskuterer aktuelle emner via videoer, artikler og debat for at styrke
+        kritisk tænkning og kildekritik.
+      </p>
+    </section>
 
-        <div class="section">
-          <h2>Eksempler på emner vi har arbejdet med</h2>
-          <ul>
-            <li>Folketingsvalg 2026</li>
-            <li>Romerriget</li>
-            <li>Trumps USA</li>
-            <li>Pyramidernes gåder</li>
-            <li>Japans ekstreme arbejdskultur</li>
-            <li>Historie år 2005</li>
-            <li>Kommunalvalg</li>
-            <li>Tokyo brænder (krig)</li>
-            <li>Tur til Reagan Vest</li>
-            <li>Storbritannien og Blitzen (krig)</li>
-          </ul>
-        </div>
+    <section class="card">
+      <h2>Eksempler på emner vi har haft om</h2>
+      <ul>
+        <li>Folketingsvalg 2026</li>
+        <li>Romerriget</li>
+        <li>Trumps USA</li>
+        <li>Pyramidernes gåder</li>
+        <li>Japans ekstreme arbejdskultur</li>
+        <li>Historie år 2005</li>
+        <li>Kommunalvalg</li>
+        <li>Tokyo brænder (krig)</li>
+        <li>Tur til Reagan Vest</li>
+        <li>Storbritannien og Blitzen (krig)</li>
+      </ul>
+    </section>
 
-        <div class="footer">
-          Scan QR-koden på plakaten for at læse mere om faget Historie &amp; samfundsfag.
-        </div>
-      </div>
+    <div class="footer">
+      Scan QR-koden for at læse mere om Historie &amp; samfundsfag.
     </div>
   </div>
 </body>
