@@ -6,161 +6,228 @@
   <title>KREA Værksted</title>
   <style>
     :root{
-      --bg:#f8f2f7;
+      --dark:#313d54;
+      --dark-2:#3a4862;
+      --turquoise:#11b7b5;
+      --turquoise-soft:#dff7f6;
+      --page:#f4f8fb;
       --card:#ffffff;
-      --text:#35293a;
-      --muted:#74657a;
-      --primary:#a2578f;
-      --secondary:#f1dfee;
-      --border:#e7d4e4;
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --radius:22px;
+      --text:#243043;
+      --muted:#5f6e82;
+      --border:#d9e4ec;
+      --shadow:0 12px 30px rgba(25, 40, 60, 0.10);
+      --radius-xl:26px;
+      --radius-lg:22px;
+      --radius-md:16px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg,#f5ecf4 0%, var(--bg) 100%);
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg, #eef4f8 0%, var(--page) 100%);
       color:var(--text);
       line-height:1.65;
     }
-    .container{
-      max-width:900px;
+
+    .wrap{
+      max-width:980px;
       margin:0 auto;
-      padding:28px 18px 40px;
+      padding:28px 18px 42px;
     }
+
+    .hero{
+      background:linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+      color:#fff;
+      border-radius:var(--radius-xl);
+      padding:26px 24px;
+      box-shadow:var(--shadow);
+      margin-bottom:24px;
+    }
+
+    .hero-top{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:10px;
+    }
+
+    .hero-logo{
+      width:68px;
+      height:68px;
+      object-fit:contain;
+      display:block;
+      flex-shrink:0;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:2rem;
+      line-height:1.1;
+    }
+
+    .hero p{
+      margin:10px 0 0;
+      color:rgba(255,255,255,0.92);
+      font-size:1.02rem;
+    }
+
     .card{
       background:var(--card);
       border:1px solid var(--border);
-      border-radius:var(--radius);
+      border-radius:var(--radius-lg);
       box-shadow:var(--shadow);
+      padding:24px;
+      margin-bottom:18px;
+      position:relative;
       overflow:hidden;
     }
-    .hero{
-      background:linear-gradient(135deg, var(--primary), #c071af);
-      color:white;
-      padding:30px 24px;
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:6px;
+      background:var(--turquoise);
     }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:2rem;
-    }
-    .hero p{
-      margin:0;
-      font-size:1.05rem;
-      opacity:0.96;
-    }
-    .content{
-      padding:26px 24px 30px;
-    }
-    .section{
-      margin-bottom:26px;
-    }
+
     h2{
       margin:0 0 12px;
       font-size:1.2rem;
-      color:var(--primary);
+      color:var(--dark);
     }
+
     p{
       margin:0 0 12px;
     }
+
     ul{
       margin:10px 0 0;
       padding-left:22px;
     }
+
     li{
       margin:7px 0;
     }
+
     a{
-      color:var(--primary);
+      color:var(--dark);
+      font-weight:600;
       word-break:break-word;
     }
+
+    .back{
+      display:inline-block;
+      margin-bottom:18px;
+      color:var(--dark);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .back:hover, a:hover{
+      text-decoration:underline;
+    }
+
     .footer{
-      margin-top:30px;
-      padding-top:18px;
-      border-top:1px solid var(--border);
+      text-align:center;
       color:var(--muted);
       font-size:0.95rem;
+      margin-top:26px;
     }
-    @media (max-width:600px){
-      .hero h1{font-size:1.7rem}
-      .content,.hero{padding:20px}
+
+    @media (max-width:700px){
+      .hero-logo{
+        width:56px;
+        height:56px;
+      }
+
+      .hero h1{
+        font-size:1.7rem;
+      }
+
+      .hero, .card{
+        padding:20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <div class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← Tilbage til fagoversigt</a>
+
+    <section class="hero">
+      <div class="hero-top">
+        <img src="specialminds-logo.png" alt="Special Minds logo" class="hero-logo" />
         <h1>KREA Værksted</h1>
-        <p>Kreative temaer, materialer, teknikker og fordybelse.</p>
       </div>
+      <p>Kreative temaer, materialer, teknikker og mulighed for fordybelse.</p>
+    </section>
 
-      <div class="content">
-        <div class="section">
-          <h2>Beskrivelse</h2>
-          <p>
-            Tema-baseret undervisning i kreative aktiviteter. Der vælges et tema ud fra
-            eksempelvis materiale, emne eller teknikker, som der arbejdes med i en given periode,
-            for eksempel 4–8 uger.
-          </p>
-          <p>
-            Her vil der være mulighed for kreativ fordybelse, ture ud af huset i relation til emnet osv.
-          </p>
-          <p>
-            Vi starter med smykkeskåle og dipskåle i keramik. Eleverne har medindflydelse på,
-            hvad næste tema skal være. Der arbejdes som udgangspunkt individuelt, men alle arbejder
-            med samme tema.
-          </p>
-        </div>
+    <section class="card">
+      <h2>Beskrivelse</h2>
+      <p>
+        Tema baseret undervisning i kreative aktiviteter. Der vælges et tema ud fra
+        eksempelvis materiale, emne eller teknikker, som der arbejdes med i en given periode,
+        eksempelvis 4–8 uger.
+      </p>
+      <p>
+        Her vil der være mulighed for kreativ fordybelse, ture ud af huset i relation til emnet osv.
+      </p>
+      <p>
+        Vi starter med smykkeskåle og dipskåle i keramik. Eleverne har medindflydelse på,
+        hvad næste tema skal være. Der arbejdes som udgangspunkt individuelt, men alle arbejder
+        med samme tema.
+      </p>
+    </section>
 
-        <div class="section">
-          <h2>Formål</h2>
-          <ul>
-            <li>At eleverne får kendskab til forskellige materialer, teknikker og kreative processer</li>
-            <li>At eleverne får mulighed for at arbejde med den kreative proces på forskellige måder</li>
-            <li>At eleverne får mulighed for fordybelse og bliver klogere på, hvordan kreative aktiviteter påvirker nervesystemet og craft-psykologi</li>
-          </ul>
-        </div>
+    <section class="card">
+      <h2>Formål</h2>
+      <ul>
+        <li>At eleverne får kendskab til forskellige materialer, teknikker og kreative processer</li>
+        <li>At eleverne får mulighed for at arbejde med den kreative proces på forskellige måder</li>
+        <li>At eleverne får mulighed for fordybelse og blive klogere på, hvordan kreative aktiviteter påvirker nervesystemet og craft psykologi</li>
+      </ul>
+    </section>
 
-        <div class="section">
-          <h2>Eksempler på kreative projekter</h2>
-          <ul>
-            <li>Sy et net ud af brugte cowboybukser</li>
-            <li>Sy net eller puder ud af møbelstof</li>
-            <li>Små skulpturer i keramik</li>
-            <li>Tegneforløb, f.eks. tegne dyr i zoo</li>
-            <li>Blomstertryk på genbrugspapir</li>
-            <li>Smykketema</li>
-            <li>Akvareldyr på savannen</li>
-            <li>Linoleumstryk</li>
-            <li>Lad stenen skabe tegningen</li>
-            <li>Mosbilleder til opgangen og gangene</li>
-          </ul>
-        </div>
+    <section class="card">
+      <h2>Eksempler på kreative projekter</h2>
+      <ul>
+        <li>Sy et net ud af brugte cowboybukser</li>
+        <li>Sy net eller puder ud af møbelstof</li>
+        <li>Små skulpturer i keramik</li>
+        <li>Tegneforløb, f.eks. tegne dyr i zoo</li>
+        <li>Blomstertryk på genbrugspapir</li>
+        <li>Smykke tema</li>
+        <li>Akvareldyr på savannen</li>
+        <li>Linoleumstryk</li>
+        <li>Lad stenen skabe tegningen</li>
+        <li>Mos billeder til opgangen og gangene</li>
+      </ul>
+    </section>
 
-        <div class="section">
-          <h2>Inspiration</h2>
-          <ul>
-            <li>
-              Akvareldyr på savannen:
-              <a href="https://kreatip.dk/portfolio_page/silhuetter-paa-savannen/" target="_blank">
-                kreatip.dk/portfolio_page/silhuetter-paa-savannen
-              </a>
-            </li>
-            <li>
-              Mosvæg / mosbilleder:
-              <a href="https://gamst1903.dk/lav-din-egen-mosvaeg/?srsltid=AfmBOor7OdIglmiC3A2D02WFI19wBxZ0e5QuU_JQU7myQM1kIFpNOfoB" target="_blank">
-                gamst1903.dk/lav-din-egen-mosvaeg
-              </a>
-            </li>
-          </ul>
-        </div>
+    <section class="card">
+      <h2>Inspiration</h2>
+      <ul>
+        <li>
+          Akvareldyr på savannen:
+          <a href="https://kreatip.dk/portfolio_page/silhuetter-paa-savannen/" target="_blank">
+            kreatip.dk/portfolio_page/silhuetter-paa-savannen
+          </a>
+        </li>
+        <li>
+          Mos billeder:
+          <a href="https://gamst1903.dk/lav-din-egen-mosvaeg/?srsltid=AfmBOor7OdIglmiC3A2D02WFI19wBxZ0e5QuU_JQU7myQM1kIFpNOfoB" target="_blank">
+            gamst1903.dk/lav-din-egen-mosvaeg
+          </a>
+        </li>
+      </ul>
+    </section>
 
-        <div class="footer">
-          Scan QR-koden på plakaten for at læse mere om KREA Værksted.
-        </div>
-      </div>
+    <div class="footer">
+      Scan QR-koden for at læse mere om KREA Værksted.
     </div>
   </div>
 </body>
