@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madlavning</title>
+  <style>
+    :root{
+      --bg:#f7f8ef;
+      --card:#ffffff;
+      --text:#313423;
+      --muted:#6d725b;
+      --primary:#7d9445;
+      --secondary:#e9efd8;
+      --border:#dbe4c1;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#f2f5e7 0%, var(--bg) 100%);
+      color:var(--text);
+      line-height:1.65;
+    }
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:28px 18px 40px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero{
+      background:linear-gradient(135deg, var(--primary), #9bb65a);
+      color:white;
+      padding:30px 24px;
+    }
+    .hero h1{
+      margin:0 0 8px;
+      font-size:2rem;
+    }
+    .hero p{
+      margin:0;
+      font-size:1.05rem;
+      opacity:0.96;
+    }
+    .content{
+      padding:26px 24px 30px;
+    }
+    .section{
+      margin-bottom:26px;
+    }
+    h2{
+      margin:0 0 12px;
+      font-size:1.2rem;
+      color:var(--primary);
+    }
+    p{
+      margin:0 0 12px;
+    }
+    ul{
+      margin:10px 0 0;
+      padding-left:22px;
+    }
+    li{
+      margin:7px 0;
+    }
+    .footer{
+      margin-top:30px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+    @media (max-width:600px){
+      .hero h1{font-size:1.7rem}
+      .content,.hero{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="hero">
+        <h1>Madlavning</h1>
+        <p>Madlavning som en del af bo-træning, fællesskab og hverdagsmestring.</p>
+      </div>
 
+      <div class="content">
+        <div class="section">
+          <h2>Beskrivelse</h2>
+          <p>
+            Ca. én gang om måneden laver eleverne mad sammen i kantinen i små grupper eller
+            individuelt, ud fra opskrifter som vi sammen har udvalgt.
+          </p>
+          <p>
+            Aktiviteten tager ca. 1–1,5 time, og efterfølgende spiser vi maden sammen til frokost.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Formål</h2>
+          <p>
+            Madlavningen foregår som en del af elevernes bo-træning og skal lære dem nemme og
+            overskuelige opskrifter, der efterfølgende kan bruges derhjemme.
+          </p>
+          <p>
+            Madlavning kan være en udfordring for unge med nedsatte eksekutive funktioner, og derfor
+            har vi fokus på strategier, der kan gøre processen nemmere, når det er muligt.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Eksempler på retter vi har lavet</h2>
+          <ul>
+            <li>Pasta med kødsovs</li>
+            <li>Kylling i karry</li>
+            <li>Bagning af småkager</li>
+            <li>Ristaffel</li>
+            <li>Pandekager med fyld</li>
+            <li>Boller i karry</li>
+            <li>Citronfromage</li>
+            <li>Rå æblekage med flødeskum</li>
+            <li>Pizza</li>
+            <li>Chili con carne</li>
+          </ul>
+        </div>
+
+        <div class="footer">
+          Scan QR-koden på plakaten for at læse mere om faget Madlavning.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
